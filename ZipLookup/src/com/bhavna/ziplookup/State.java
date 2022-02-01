@@ -1,7 +1,7 @@
 package com.bhavna.ziplookup;
 
 public class State extends Country {
-	protected String state;
+	private String state;
 
 	public State(String country, String state) {
 		super(country);

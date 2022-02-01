@@ -1,7 +1,7 @@
 package com.bhavna.ziplookup;
 
 public class Country {
-	protected String country;
+	private String country;
 
 	public Country(String country) {
 		this.country = country;
@@ -14,5 +14,5 @@ public class Country {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	
+
 }
