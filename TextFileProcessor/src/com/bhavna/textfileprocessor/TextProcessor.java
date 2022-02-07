@@ -58,6 +58,9 @@ public class TextProcessor {
 	}
 	
 	public static void parseLine(String line) throws LogFormatException{
+		
+		if(line.matches("\\s*"))
+			return;
 			
 		String[] arr = line.trim().split("\\s+");
 		
