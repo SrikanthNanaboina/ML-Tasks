@@ -38,22 +38,6 @@ public class TextProcessor {
         catch(IOException e) {
         	System.out.println("Error while reading file");
         }
-        finally {
-			System.out.println("=== Success Map ===");
-			infoMap.forEach((k,v)-> {
-										System.out.println("User: "+ k +", No. of Logins: "+v.size());
-										v.forEach(log-> System.out.println(log.getTime()+" "+log.getDate()));
-										System.out.println();
-									});
-			
-			System.out.println("=== Fail Map ===");
-			failMap.forEach((k,v)-> {
-										System.out.println("Error: "+k);
-										v.forEach(line-> System.out.println(line));
-										System.out.println();
-									});
-		}
-        
 		
 	}
 	
@@ -83,6 +67,22 @@ public class TextProcessor {
 			
 		infoMap.get(arr[0]).add(new LoginRecord(arr[0], arr[1], (arr[2]+" "+arr[3])) );		
 
+	}
+	
+	public static void getReport() {
+		System.out.println("=== Success Map ===");
+		infoMap.forEach((k,v)-> {
+									System.out.println("User: "+ k +", No. of Logins: "+v.size());
+									v.forEach(log-> System.out.println(log.getTime()+" "+log.getDate()));
+									System.out.println();
+								});
+		
+		System.out.println("=== Fail Map ===");
+		failMap.forEach((k,v)-> {
+									System.out.println("Error: "+k);
+									v.forEach(System.out::println);
+									System.out.println();
+								});
 	}
 
 }
