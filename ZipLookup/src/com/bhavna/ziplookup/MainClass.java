@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class MainClass {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		ZipServicev1 zipService = ServiceManager.getZipService();
+		ZipServicev1 zipService = ServiceManager.getZipServicev1();
+		ZipServicev2 zipService2 = ServiceManager.getZipServicev2();
 		
 		System.out.println("Welcome to ZipService");
 		
@@ -20,7 +21,7 @@ public class MainClass {
 			
 			switch(option) {
 				case 1:
-					zipService.printAll();
+					zipService2.printAll();
 					System.out.println("Do you want to return to main menu Y/N");
 					status = scanner.nextLine().charAt(0);
 					break;
