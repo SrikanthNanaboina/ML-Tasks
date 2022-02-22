@@ -33,6 +33,11 @@ public class EmployeeServiceImpl  implements EmployeeService{
 	
 	@Override
 	public List<Employee> getAllActiveEmployees() {
+		return repository.getActiveEmployees();
+	}
+	
+	@Override
+	public List<Employee> getAllEmployees() {
 		List<Employee> list = new ArrayList<>();
 		repository.findAll().forEach(e ->  list.add(e));
 		return list;

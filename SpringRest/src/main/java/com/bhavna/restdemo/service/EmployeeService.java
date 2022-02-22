@@ -9,4 +9,8 @@ import com.bhavna.restdemo.model.Employee;
 @Service
 public interface EmployeeService {
 	public List<Employee> getAllActiveEmployees();
+
+	public List<Employee> getAllEmployees();
+
+
 }
