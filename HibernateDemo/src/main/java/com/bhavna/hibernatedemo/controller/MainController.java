@@ -38,12 +38,12 @@ public class MainController {
 		return ownerService.getOwners();
 	}
 	
-	@PostMapping("/post/Owner")
+	@PostMapping("/post/owner")
 	public Owner postOwner(@RequestBody Owner owner) {
 		return ownerService.saveOwner(owner);
 	}
 	
-	@PutMapping("/update/Owner")
+	@PutMapping("/update/owner")
 	public Owner updateOwner(@RequestBody Owner owner) {
 		return ownerService.updateOwner(owner);
 	}
@@ -58,12 +58,12 @@ public class MainController {
 		return vehicleService.getVehicles();
 	}
 	
-	@PostMapping("/post/Vehicle")
+	@PostMapping("/post/vehicle")
 	public Vehicle postVehicle(@RequestBody Vehicle vehicle) {
 		return vehicleService.saveVehicle(vehicle);
 	}
 	
-	@PutMapping("/update/Vehicle")
+	@PutMapping("/update/vehicle")
 	public Vehicle updateVehicle(@RequestBody Vehicle vehicle) {
 		return vehicleService.updateVehicle(vehicle);
 	}

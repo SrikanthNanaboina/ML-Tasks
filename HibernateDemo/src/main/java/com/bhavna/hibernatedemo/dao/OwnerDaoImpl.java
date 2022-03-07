@@ -46,6 +46,7 @@ public class OwnerDaoImpl implements OwnerDao{
 	public Owner saveOwner(Owner owner) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
+		owner.getVehicles().forEach(vehicle -> vehicle.setOwnerId(owner.getId()));
 		session.save(owner);
 		session.getTransaction().commit();
 		session.close();
@@ -56,6 +57,7 @@ public class OwnerDaoImpl implements OwnerDao{
 	public Owner updateOwner(Owner owner) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
+		owner.getVehicles().forEach(vehicle -> vehicle.setOwnerId(owner.getId()));
 		session.saveOrUpdate(owner);
 		session.getTransaction().commit();
 		session.close();
