@@ -26,11 +26,6 @@ public class Owner implements Serializable {
 	
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//	@JoinTable(
-//	            name="VEHICLES_OWNER",
-//	            joinColumns = @JoinColumn( name="OWNER_ID"),
-//	            inverseJoinColumns = @JoinColumn( name="V_ID")
-//	    )
 	@JoinColumn( name="OWNER_ID")
 	private List<Vehicle> vehicles;
 
