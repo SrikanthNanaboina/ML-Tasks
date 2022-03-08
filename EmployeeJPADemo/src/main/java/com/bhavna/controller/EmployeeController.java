@@ -3,6 +3,7 @@ package com.bhavna.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bhavna.model.Employee;
+import com.bhavna.model.EmployeePage;
 import com.bhavna.service.EmployeeService;
 
 
@@ -44,8 +47,9 @@ public class EmployeeController {
 	}
 	
 	@GetMapping("/Employees")
-	public List<Employee> getStudents() {
-		return service.getAllEmployees();
-	}	
+	public EmployeePage getEmployees(@RequestParam(name="page", required=false, defaultValue = "0")Integer page,
+										@RequestParam(name="size", required=false, defaultValue = "10") Integer size) {
+		return service.getAllEmployees(page,size);
+	}
 	
 }
